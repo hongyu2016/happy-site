@@ -9,9 +9,11 @@ import VueAxios from 'vue-axios';
 import MintUi from 'mint-ui';
 
 Vue.config.productionTip = false
+Vue.prototype.$http = axios;
 
 Vue.use(MintUi);
 Vue.use(VueAxios,axios);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

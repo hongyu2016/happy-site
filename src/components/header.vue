@@ -1,10 +1,10 @@
 <template>
   <header id="head">
-    <mt-header fixed  title="标题过长会隐藏后面的内容啊哈哈哈哈">
+    <mt-header fixed  title="标题过长会隐藏后面的内容啊哈哈哈哈" class="header">
       <router-link to="/" slot="left">
         <mt-button icon="back">返回</mt-button>
       </router-link>
-      <mt-button icon="more" slot="right"></mt-button>
+
     </mt-header>
   </header>
 </template>
@@ -19,5 +19,5 @@ export default{
 }
 </script>
 <style lang="scss" scoped>
-
+  .header{height: 1.2rem}
 </style>

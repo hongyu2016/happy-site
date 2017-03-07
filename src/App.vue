@@ -23,12 +23,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import "./assets/scss/variables.scss";
+  ul,li{margin:0;padding:0}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 1.4rem;
+  padding-bottom: 1.6rem;
 }
+
 </style>
