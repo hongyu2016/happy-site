@@ -1,13 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <commonHeader></commonHeader>
+    <div class="main">
+      <transition name="slide-left">
+        <keep-alive>
+          <router-view v-if="$route.meta.keepAlive"></router-view>
+        </keep-alive>
+      </transition>
+      <router-view v-if="!$route.meta.keepAlive"></router-view>
+
+    </div>
+    <commonFooterMenu></commonFooterMenu>
   </div>
 </template>
 
 <script>
+  import commonHeader from './components/header.vue';
+  import commonFooterMenu from './components/commonFooterMenu.vue';
 export default {
-  name: 'app'
+  name: 'app',
+    components:{commonHeader,commonFooterMenu}
 }
 </script>
 
@@ -16,7 +28,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
