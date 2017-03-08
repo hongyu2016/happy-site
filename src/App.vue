@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <commonHeader></commonHeader>
+    <!--<commonHeader></commonHeader>-->
     <div class="main">
       <transition name="slide-left">
         <keep-alive>
@@ -25,13 +25,22 @@ export default {
 
 <style lang="scss">
   @import "./assets/scss/variables.scss";
+  a{
+    text-decoration: none;
+    &:active{
+      text-decoration: none;
+     }
+    &:focus{
+       text-decoration: none;
+     }
+  }
   ul,li{margin:0;padding:0}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 1.4rem;
+  /*margin-top: 1.4rem;*/
   padding-bottom: 1.6rem;
 }
 

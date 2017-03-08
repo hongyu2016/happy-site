@@ -1,11 +1,11 @@
 <template>
     <footer id="footer">
-        <!--<router-link :to="{name:'index'}" tag="div" class="sub-menu">-->
-            <router-link :to="{name:'meinvList',params:{page:1}}" tag="div" class="sub-menu">
+
+        <router-link :to="{name:'meinvList',params:{page:1}}" tag="div" class="sub-menu">
             <span class="icon-camera-retro"></span>
             美女图集
         </router-link>
-        <router-link :to="{name:'xingzuoList'}" tag="div" class="sub-menu">
+        <router-link to="/xingzuoList" tag="div" class="sub-menu">
             <span class="icon-star-empty"></span>
             星座秀
         </router-link>
@@ -31,7 +31,8 @@
 </script>
 <style lang="scss" scoped>
     @import "../assets/scss/variables.scss";
-    #footer{position: fixed;bottom: 0;left: 0;width: 100%;display: -webkit-box;
+    #footer{position: fixed;bottom: 0;left: 0;width: 100%;
+        display: -webkit-box;
         display: -moz-box;
         display: -ms-box;
         border-top:1px solid #ccc;

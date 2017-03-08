@@ -17,5 +17,9 @@ export default {
     //美女图片列表
     getMeinvList(num,page,rand=1){
         return _baseUrl+'?showapi_appid='+showapi_appid+'&showapi_sign='+showapi_sign+'&num='+num+'&page='+page+'&type='+34;
+    },
+    //手机号吉凶
+    searchPhone(mobile){
+        return _baseUrl4+'?showapi_appid='+showapi_appid+'&showapi_sign='+showapi_sign+'&mobile='+mobile;
     }
 }
