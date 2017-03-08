@@ -43,6 +43,7 @@
             }
         },
         mounted(){
+            this.page=this.$route.params.page;  //初始化时获取地址栏的页码
             this.get();
         },
         watch:{
@@ -97,7 +98,6 @@
             },
             prev(){
                 this.page--;
-
                 if(this.page<=1){
                     this.page=1;
                 }
