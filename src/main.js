@@ -7,12 +7,14 @@ import router from './router'
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 import MintUi from 'mint-ui';
+import infiniteScroll from 'vue-infinite-scroll' //无限滚动
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios;
 
 Vue.use(MintUi);
 Vue.use(VueAxios,axios);
+Vue.use(infiniteScroll);
 
 /* eslint-disable no-new */
 new Vue({

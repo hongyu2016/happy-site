@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/views/index'
+//import index from '@/views/index'
+import meinvList from '@/views/meinv/meinvList.vue';
 import meinvDetail from '@/views/meinv/meinvDetail'; //美女图集详情
 import xingzuoList from '@/views/xingzuo/xingzuoList';  //星座list
 import neihanList from '@/views/neihan/neihanList';  //内涵漫画
@@ -11,12 +12,17 @@ export default new Router({
   linkActiveClass:'router-active',
   routes: [
       //美女图集
-    {
-      path: '/index',
+    /*{
+      path: '/index/page/1',
       name: 'index',
-      component: index,
-       meta:{keepAlive:true}
-    },
+      component: meinvList,
+    },*/
+      //美女图集翻页
+      {
+          path: '/index/page/:page',
+          name: 'meinvList',
+          component: meinvList,
+      },
       //星座秀
       {
           path: '/xingzuoList',
@@ -40,8 +46,7 @@ export default new Router({
       },
       {
         path:'*',
-          redirect:'/index',
-          meta:{keepAlive:true}
+          redirect:'/index/page/1',
       }
   ]
 })
