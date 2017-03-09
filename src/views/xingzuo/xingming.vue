@@ -98,7 +98,7 @@
         components:{loading}
     }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     @import "../../assets/scss/variables.scss";
     .input-group{
         margin-top: 0.5rem;

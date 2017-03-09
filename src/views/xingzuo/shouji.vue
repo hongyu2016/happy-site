@@ -6,6 +6,9 @@
                 <input type="tel" class="phone" v-model.trim="phone" placeholder="请输入手机号" @keyup.enter="search">
             </div>
         </div>
+        <div class="sure-box">
+            <button type="button" @click="search">查询</button>
+        </div>
         <div class="search-content">
             <dl class="result-dl" v-show="show">
                 <dt>
