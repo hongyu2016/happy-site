@@ -21,5 +21,8 @@ export default {
     //手机号吉凶
     searchPhone(mobile){
         return _baseUrl4+'?showapi_appid='+showapi_appid+'&showapi_sign='+showapi_sign+'&mobile='+mobile;
+    },
+    searchName(xing,name){
+        return _baseUrl3+'?showapi_appid='+showapi_appid+'&showapi_sign='+showapi_sign+'&xing='+xing+'&name='+name;
     }
 }

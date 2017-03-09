@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="sure-box">
-            <button type="button">查询</button>
+            <button type="button" @click="search">查询</button>
         </div>
         <div class="search-content">
             <dl class="result-dl" v-show="show">
@@ -21,40 +21,16 @@
                     分析结果
                 </dt>
                 <dd class="result-dd">
-                    <div class="left">数理分数（满分100分）</div>
-                    <div class="right">{{list.shuli}}</div>
+                    <div class="left">得分</div>
+                    <div class="right">{{list.score}}</div>
                 </dd>
                 <dd class="result-dd">
-                    <div class="left">五行</div>
-                    <div class="right">{{list.wuxing}}</div>
+                    <div class="left">吉凶</div>
+                    <div class="right">{{list.jx}}</div>
                 </dd>
                 <dd class="result-dd">
-                    <div class="left">最有缘灵数</div>
-                    <div class="right">{{list.zyy}}</div>
-                </dd>
-                <dd class="result-dd">
-                    <div class="left">幸运手机饰物</div>
-                    <div class="right">{{list.lucky}}</div>
-                </dd>
-                <dd class="result-dd">
-                    <div class="left">吉凶指示</div>
-                    <div class="right">{{list.jixiong}}</div>
-                </dd>
-                <dd class="result-dd">
-                    <div class="left">财运</div>
-                    <div class="right">{{list.money}}</div>
-                </dd>
-                <dd class="result-dd">
-                    <div class="left">爱情简评</div>
-                    <div class="right">{{list.love}}</div>
-                </dd>
-                <dd class="result-dd">
-                    <div class="left">桃花运势</div>
-                    <div class="right">{{list.thys}}</div>
-                </dd>
-                <dd class="result-dd">
-                    <div class="left">爱情运势</div>
-                    <div class="right">{{list.aqys}}</div>
+                    <div class="left">简批</div>
+                    <div class="right">{{list.jp}}</div>
                 </dd>
             </dl>
         </div>
@@ -77,26 +53,37 @@
         },
         methods:{
             search(){
-                if(this.phone==''){
+                if(this.xing==''){
                     Toast({
-                        message: '请输入手机号码',
+                        message: '请输入姓氏',
                         position: 'center',
                         duration: 5000
                     });
                     return false;
                 }
+                if(this.ming==''){
+                    Toast({
+                        message: '请输入名字',
+                        position: 'center',
+                        duration: 5000
+                    });
+                    return false;
+                }
+                this.loading=true;
                 let _this=this;
-                this.$http.get(api.searchPhone(this.phone)).then(function(res){
+                this.$http.get(api.searchName(this.xing,this.ming)).then(function(res){
 
                     if(res.data.showapi_res_code==0){
                         _this.list=res.data.showapi_res_body.item;
                         _this.show=true;
+                        this.loading=false;
                     }else{
                         Toast({
                             message: res.data.showapi_res_error,
                             position: 'center',
                             duration: 5000
                         });
+                        this.loading=false;
                     }
                 }).catch((error)=>{
                     Toast({
@@ -104,6 +91,7 @@
                         position: 'center',
                         duration: 5000
                     });
+                    this.loading=false;
                 })
             }
         },
