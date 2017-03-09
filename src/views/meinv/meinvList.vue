@@ -85,7 +85,7 @@
                     }else{
                         Toast({
                             message: res.data.showapi_res_error,
-                            position: 'bottom',
+                            position: 'center',
                             duration: 5000
                         });
                     }

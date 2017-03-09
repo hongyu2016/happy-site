@@ -34,10 +34,6 @@ export default new Router({
           meta:{keepAlive:true},
           children:
           [
-             /* {
-                  path:'',
-                  component:shouji
-              },*/
               {
                   path:'shouji',
                   component:shouji
@@ -51,7 +47,7 @@ export default new Router({
                   component:xingming
               }
           ],
-          redirect: '/xingzuoList/shouji'
+          redirect: '/xingzuoList/shouji'  //重定向shouji路由
       },
       //内涵漫画
       {
