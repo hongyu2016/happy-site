@@ -22,7 +22,16 @@ export default {
     searchPhone(mobile){
         return _baseUrl4+'?showapi_appid='+showapi_appid+'&showapi_sign='+showapi_sign+'&mobile='+mobile;
     },
+    //姓名测试
     searchName(xing,name){
         return _baseUrl3+'?showapi_appid='+showapi_appid+'&showapi_sign='+showapi_sign+'&xing='+xing+'&name='+name;
+    },
+    //内涵漫画列表
+    getManhua(page){
+        return _baseUrl5+'?showapi_appid='+showapi_appid+'&showapi_sign='+showapi_sign+'&page='+page;
+    },
+    //内涵漫画详情
+    getManhuaDetail(id){
+        return _baseUrl6+'?showapi_appid='+showapi_appid+'&showapi_sign='+showapi_sign+'&id='+id;
     }
 }

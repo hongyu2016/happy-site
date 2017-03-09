@@ -9,7 +9,7 @@
             <span class="icon-star-empty"></span>
             星座秀
         </router-link>
-        <router-link :to="{name:'neihanList'}" tag="div" class="sub-menu">
+        <router-link :to="{name:'neihanIndex',params:{page:1}}" tag="div" class="sub-menu">
             <span class="icon-ambulance"></span>
             内涵漫画
         </router-link>

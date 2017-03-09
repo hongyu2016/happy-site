@@ -1,13 +1,12 @@
 <template>
     <div class="list">
         <div class="turn-page">
-            <button type="button" class="btn btn-prev" @click="prev">
+            <button type="button" class="btn btn-prev"  @click="prev">
                 <span class="icon-angle-left"></span>
             </button>
-            <button type="button" class="btn btn-next" @click="next">
+            <button type="button" class="btn btn-next"  @click="next">
                 <span class="icon-angle-right"></span>
             </button>
-
         </div>
         <loading v-show="loading" class="loading"></loading>
         <mt-loadmore :top-method="loadTop" :auto-fill="false" ref="loadmore" >
@@ -134,13 +133,14 @@
         }
     }
     .list-ul>li{ margin-bottom: 0.2rem;box-sizing: border-box}
+
     .btn{
         position: fixed;top:50%;z-index: 10;transform: translateY(-50%);
         -webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-o-transform: translateY(-50%);
         border:none;background-color: $blue;font-size: 1rem;padding: 0 0.3rem;color: $white;text-align: center;
-        &:active{
-             background-color:lighten($blue,15%)
-         }
+    &:active{
+         background-color:lighten($blue,15%)
+     }
     }
     .btn-prev{
         left:0;
@@ -148,5 +148,6 @@
     .btn-next{
         right:0;
     }
+
     .loading{position: fixed;left: 50%;top: 50%;z-index: 15;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);-o-transform: translate(-50%,-50%)}
 </style>

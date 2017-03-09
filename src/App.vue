@@ -43,5 +43,5 @@ export default {
   /*margin-top: 1.4rem;*/
   padding-bottom: 1.6rem;
 }
-
+  .loading{position: fixed;left: 50%;top: 50%;z-index: 15;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);-o-transform: translate(-50%,-50%)}
 </style>
