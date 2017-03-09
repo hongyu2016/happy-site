@@ -1,6 +1,6 @@
 <template>
     <div class="list">
-        这是车牌号吉凶
+        暂不支持
     </div>
 </template>
 <script>

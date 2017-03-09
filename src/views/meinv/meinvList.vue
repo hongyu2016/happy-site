@@ -138,7 +138,7 @@
         position: fixed;top:50%;z-index: 10;transform: translateY(-50%);
         -webkit-transform: translateY(-50%);-moz-transform: translateY(-50%);-o-transform: translateY(-50%);
         border:none;background-color: $blue;font-size: 1rem;padding: 0 0.3rem;color: $white;text-align: center;
-        &:focus{
+        &:active{
              background-color:lighten($blue,15%)
          }
     }

@@ -53,6 +53,7 @@
 </template>
 <script>
     import api from'../../api/api.js';
+    import loading from '../../components/loading.vue'
     import { Toast } from 'mint-ui'; //提示
     export default{
         name:'shouji',
@@ -74,18 +75,21 @@
                     });
                     return false;
                 }
+                this.loading=true;
                 let _this=this;
                 this.$http.get(api.searchPhone(this.phone)).then(function(res){
 
                     if(res.data.showapi_res_code==0){
                         _this.list=res.data.showapi_res_body.item;
                         _this.show=true;
+                        _this.loading=false;
                     }else{
                         Toast({
                             message: res.data.showapi_res_error,
                             position: 'center',
                             duration: 5000
                         });
+                        _this.loading=false;
                     }
                 }).catch((error)=>{
                     Toast({
@@ -93,9 +97,11 @@
                         position: 'center',
                         duration: 5000
                     });
+                    _this.loading=false;
                 })
             }
-        }
+        },
+        components:{loading}
     }
 </script>
 <style lang="scss" scoped>

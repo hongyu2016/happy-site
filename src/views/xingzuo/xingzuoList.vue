@@ -9,11 +9,11 @@
             <router-link to="/xingzuoList/shouji" tag="div" class="btn">
                 手机号吉凶
             </router-link>
-            <router-link to="/xingzuoList/chepai" tag="div" class="btn">
-                车牌号吉凶
-            </router-link>
             <router-link to="/xingzuoList/xingming" tag="div" class="btn">
                 姓名测试
+            </router-link>
+            <router-link to="/xingzuoList/chepai" tag="div" class="btn">
+                车牌号吉凶
             </router-link>
         </div>
 
