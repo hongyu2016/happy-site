@@ -16,6 +16,7 @@
             <button type="button" @click="search">查询</button>
         </div>
         <div class="search-content">
+            <loading v-show="loading"></loading>
             <dl class="result-dl" v-show="show">
                 <dt>
                     分析结果
@@ -72,18 +73,17 @@
                 this.loading=true;
                 let _this=this;
                 this.$http.get(api.searchName(this.xing,this.ming)).then(function(res){
-
                     if(res.data.showapi_res_code==0){
                         _this.list=res.data.showapi_res_body.item;
                         _this.show=true;
-                        this.loading=false;
+                        _this.loading=false;
                     }else{
                         Toast({
                             message: res.data.showapi_res_error,
                             position: 'center',
                             duration: 5000
                         });
-                        this.loading=false;
+                        _this.loading=false;
                     }
                 }).catch((error)=>{
                     Toast({
@@ -91,7 +91,7 @@
                         position: 'center',
                         duration: 5000
                     });
-                    this.loading=false;
+                    _this.loading=false;
                 })
             }
         },

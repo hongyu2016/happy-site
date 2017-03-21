@@ -10,6 +10,7 @@
             <button type="button" @click="search">查询</button>
         </div>
         <div class="search-content">
+            <loading v-show="loading"></loading>
             <dl class="result-dl" v-show="show">
                 <dt>
                     分析结果
