@@ -33,7 +33,7 @@
         }
     }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     @import "../../assets/scss/variables.scss";
     .list{
         padding: 0.2rem;
@@ -57,5 +57,22 @@
 
     }
     .btn-group .router-active{background-color:$blue;color:$white}
+    //确定按钮
+    .sure-box{
+        padding: 0.4rem 0;
+        width: 100%;
+    button{
+        width: 100%;
+        display: block;
+        font-size: 14px;
+        padding: 0.3rem 0;
+        background-color: $blue;
+        border:none;
+        color: $white;
+        &:active{
+             background-color: darken($blue,15%);
+         }
+        }
+    }
 
 </style>

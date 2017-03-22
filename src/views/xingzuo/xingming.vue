@@ -167,21 +167,5 @@
         }
     }
 
-    .sure-box{
-        padding: 0.4rem 0;
-        width: 100%;
-        button{
-            width: 100%;
-            display: block;
-            font-size: 14px;
-            padding: 0.3rem 0;
-            background-color: $blue;
-            border:none;
-            color: $white;
-            &:active{
-                 background-color: darken($blue,15%);
-             }
-        }
-    }
 
 </style>
